@@ -1,14 +1,9 @@
 <template>
-  <button :class="`bg-${type} text-white px-4 py-2 rounded-md`">
+  <button class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-md">
     <slot />
   </button>
 </template>
 <script setup>
-defineProps({
-  type: {
-    type: String,
-    default: 'primary'
-  }
-})
+defineProps({})
 </script>
 <style lang=""></style>
