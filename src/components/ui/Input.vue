@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="mb-4 w-full">
     <Field
@@ -33,7 +34,6 @@ const props = defineProps({
     default: 'required'
   }
 })
-const { errorMessage } = useField(props.name)
 </script>
 
 <style scoped></style>
