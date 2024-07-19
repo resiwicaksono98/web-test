@@ -3,9 +3,10 @@ import { config } from './config'
 import { useCookies } from 'vue3-cookies'
 
 const instance = axios.create({
-  baseURL: config.apiUrl,
+  baseURL: config.apiUrl + '/api/',
   timeout: config.timeout,
   headers: {
+    Accept: 'application/json',
     'Content-Type': 'application/json'
   },
   withCredentials: true

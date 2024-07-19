@@ -6,9 +6,17 @@ export default {
       colors: {
         primary: '#5F2B8C',
         'primary-hover': '#4A2370',
+        'primary-medium': '#54467D',
+        'primary-soft': '#9870C0',
         secondary: '#49B247',
         'gray-darken': '#656565',
-        'gray-soft': '#BDBCBC'
+        'gray-soft': '#BDBCBC',
+        'gray-medium': '#585858',
+        'gray-light': '#64748B'
+      },
+      fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
       }
     }
   },

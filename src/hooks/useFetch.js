@@ -38,12 +38,10 @@ export function useFetch(url, method = 'GET', payload = null) {
     }
   }
 
-  fetchData()
-
   return {
     data,
     error,
     loading,
-    refetch: fetchData
+    fetchData
   }
 }

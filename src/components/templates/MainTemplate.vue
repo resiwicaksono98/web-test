@@ -1,5 +1,10 @@
 <template>
-  <main class="container mx-auto p-4">
+  <div>
+    <Navbar />
     <slot></slot>
-  </main>
+  </div>
 </template>
+
+<script setup>
+import Navbar from '@/components/container/Navbar.vue'
+</script>
