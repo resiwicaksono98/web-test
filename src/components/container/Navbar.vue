@@ -1,14 +1,17 @@
 <template>
-  <nav class="bg-white shadow text-black p-4 px-12 z-50">
+  <nav class="fixed top-0 w-full bg-white text-black p-4 px-10 z-50 shadow-md">
     <div class="flex items-center justify-between">
-      <div class="logo">Logo</div>
+      <div class="flex items-center gap-10">
+        <div class="logo text-primary-dark text-2xl font-extrabold font-manrope">GASPOLL.IN</div>
+        <div class="text-primary font-semibold font-manrope">Waitress Kami</div>
+        <div class="text-primary font-semibold font-manrope">Sales Kami</div>
+      </div>
       <div class="flex items-center gap-6">
-        <div>Cari Waitress</div>
-        <div>Cari Sales</div>
         <!-- User not logged in -->
         <div class="flex items-center gap-6" v-if="!user">
-          <div class="py-1 rounded-full cursor-pointer" @click="isOpen = true">Login</div>
-          <Button class="py-1 rounded-full">Daftar</Button>
+          <Button class="py-1 rounded-full cursor-pointer" @click="isOpen = true"
+            >Masuk/Daftar</Button
+          >
         </div>
       </div>
     </div>
@@ -28,6 +31,7 @@ import Button from '../ui/Button.vue'
 import Login from './Login.vue'
 import { Dialog } from '@headlessui/vue'
 import Icon from '../ui/Icon.vue'
+import { onMounted } from 'vue'
 
 const isOpen = ref(false)
 const user = ref(false)

@@ -6,8 +6,10 @@ export default {
       colors: {
         primary: '#5F2B8C',
         'primary-hover': '#4A2370',
+        'primary-dark': '#410D6E',
         'primary-medium': '#54467D',
         'primary-soft': '#9870C0',
+
         secondary: '#49B247',
         'gray-darken': '#656565',
         'gray-soft': '#BDBCBC',

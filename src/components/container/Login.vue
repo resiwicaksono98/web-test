@@ -47,6 +47,7 @@
           >
         </Form>
       </div>
+      <!-- Register one -->
     </AuthTemplate>
     <div class="absolute top-4 right-4 cursor-pointer" @click="$emit('close')">
       <Icon name="mdi:close" class="w-6 h-6 text-gray-darken" />
