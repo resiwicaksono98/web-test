@@ -9,9 +9,9 @@
       <div class="flex items-center gap-6">
         <!-- User not logged in -->
         <div class="flex items-center gap-6" v-if="!user">
-          <Button class="py-1 rounded-full cursor-pointer" @click="isOpen = true"
-            >Masuk/Daftar</Button
-          >
+          <Button class="py-1 rounded-full cursor-pointer" @click="openDialog">
+            Masuk/Daftar
+          </Button>
         </div>
       </div>
     </div>
@@ -19,21 +19,39 @@
   <!-- Dialog Login or Register -->
   <Dialog
     :open="isOpen"
-    @close="isOpen = false"
+    @close="closeDialog"
     class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40"
   >
-    <LoginRegister @close="isOpen = false" />
+    <LoginRegister @close="closeDialog" :showRegister="showRegister"/>
   </Dialog>
 </template>
+
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Button from '../ui/Button.vue'
 import LoginRegister from './LoginRegister.vue'
 import { Dialog } from '@headlessui/vue'
-import Icon from '../ui/Icon.vue'
-import { onMounted } from 'vue'
+import { useAuthStore } from '@/stores/authStore' 
 
 const isOpen = ref(false)
-const user = ref(false)
+const user = ref(null) 
+const showRegister = ref(false)
+
+const openDialog = () => {
+  isOpen.value = true
+}
+
+const closeDialog = () => {
+  isOpen.value = false
+}
+
+onMounted(async () => {
+  const authStore = useAuthStore()
+  user.value = authStore.user 
+
+  if (user.value && !user.value.isDemander) {
+    showRegister.value = true
+    isOpen.value = true
+  }
+})
 </script>
-<style lang=""></style>

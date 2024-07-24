@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <DialogPanel class="bg-white rounded-2xl relative">
       <AuthTemplate>
@@ -32,16 +31,12 @@
           <Form @submit="otpHandle" class="mt-8">
             <InputOTP />
             <p class="text-gray-medium text-start ml-6 font-light text-sm mt-2">
-              <span v-if="timeLeft > 0">Kirim ulang kode dalam {{ timeLeft }}</span>
+              <span v-if="timeLeft > 0">Kirim ulang kode dalam {{ timeLeft }} detik</span>
               <span v-else class="underline cursor-pointer" @click="startTimer">
                 Kirim ulang kode
               </span>
             </p>
-            <Button
-              type="submit"
-              class="bg-primary-soft w-full rounded-xl mt-6"
-              :disabled="isSubmitting"
-            >
+            <Button type="submit" class="bg-primary-soft w-full rounded-xl mt-6" :disabled="isSubmitting">
               Submit
             </Button>
           </Form>
@@ -98,7 +93,7 @@
                     v-model="referral"
                     @input="validateReferral"
                   />
-                  <button type="button" class="mb-4 p-2 bg-primary text-white rounded-r-lg" @click="submitReferral">
+                  <button type="button" class="mb-4 p-2 bg-green text-white rounded-r-lg" @click="submitReferral">
                     <Icon name="mdi:arrow-right" class="w-6 h-6" />
                   </button>
                 </div>
@@ -171,7 +166,6 @@
       .string()
       .required('Email harus diisi')
       .email('Format email tidak valid'),
-    gender: yup.string().required('Jenis kelamin diperlukan'),
     dateOfBirth: yup.date().required('Tanggal lahir diperlukan')
   })
   
@@ -188,7 +182,6 @@
   ]
   
   watch(currentStep, (newStep) => {
-    console.log('Current step changed to:', newStep)
     if (newStep === 1) {
       currentSchema.value = firstStepSchema
     } else if (newStep === 2) {
@@ -210,7 +203,6 @@
         throw new Error('Phone number validation failed')
       }
     } catch (error) {
-      console.error(error)
       toastError(error.message || 'Gagal memproses nomor telepon')
     }
     isSubmitting.value = false
@@ -221,14 +213,12 @@
     try {
       isRegisterStep.value = true
     } catch (error) {
-      console.error(error)
       toastError(error.message || 'Error during OTP validation')
     }
     isSubmitting.value = false
   }
   
   async function registerHandle(values) {
-    console.log('Register handle values:', values)
     isSubmitting.value = true
     if (currentStep.value === 1) {
       const formattedDateOfBirth = dateOfBirth.value ? format(dateOfBirth.value, 'yyyy-MM-dd') : null
@@ -237,19 +227,17 @@
         phone: localStorage.getItem('phone'),
         fullName: values.fullName,
         email: values.email,
-        gender: values.gender,
+        gender: gender.value,
         dateOfBirth: formattedDateOfBirth
       }
-      console.log('User data:', userData)
+  
       try {
         const userResponse = await registerUser(userData)
-        console.log('User response:', userResponse)
-        if (userResponse.error) {
-          throw new Error('Error during registration')
+        if (userResponse) {
+            toastInfo('Registration successful!')
         }
         currentStep.value = 2
       } catch (error) {
-        console.error(error)
         toastError(error.message || 'Error during registration')
       }
     } else if (currentStep.value === 2) {
@@ -259,18 +247,16 @@
         locationName: values.locationName,
         referenceNumber: values.referenceNumber
       }
-      console.log('Demander data:', demanderData)
+  
       try {
         const demanderResponse = await registerDemander(demanderData)
-        console.log('Demander response:', demanderResponse)
-        if (demanderResponse.error) {
-          throw new Error('Error during registration')
+        if (demanderResponse) {
+            toastInfo('Registration successful!')
         }
         toastInfo('Registration successful!')
-        isRegisterStep.value = false
+        emit('close')
         router.push('/')
       } catch (error) {
-        console.error(error)
         toastError(error.message || 'Error during registration')
       }
     }

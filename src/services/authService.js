@@ -33,7 +33,7 @@ export const resendOtp = async (otpId) => {
 }
 
 export const registerUser = async (userData) => {
-  const { data, loading, error, fetchData } = useFetch('auth/register-user', 'POST', userData)
+  const { data, loading, error, fetchData } = useFetch('auth/register-user-manual', 'POST', userData)
 
   await fetchData()
 

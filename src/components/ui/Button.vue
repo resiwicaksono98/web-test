@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <button
-    class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-md disabled:bg-slate-400"
+    class="bg-green hover:bg-green-hover text-white px-4 py-2 rounded-md disabled:bg-slate-400"
   >
     <slot v-if="!loading" />
     <span v-else class="loader"></span>

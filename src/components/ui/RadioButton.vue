@@ -14,7 +14,7 @@
           class="flex items-center cursor-pointer text-lg"
         >
           <div
-            class="w-5 h-5 border-2 border-primary peer-checked:bg-primary peer-checked:border-transparent rounded-full mr-2 flex items-center justify-center"
+            class="w-5 h-5 border-2 border-green peer-checked:bg-primary peer-checked:border-transparent rounded-full mr-2 flex items-center justify-center"
           >
             <div class="w-2 h-2 bg-white rounded-full"></div>
           </div>
@@ -48,7 +48,7 @@
   background-color: white; 
   }
   input[type="radio"]:checked + label div div {
-  background-color: #5F2B8C; /* White inner circle when checked */
+  background-color: #6CD99B; 
   }
   
   </style>
