@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="z-10 mb-14">
+  <div class="z-10 mb-14 bg-white">
     <!-- Main information about Sales and Waitress Part Time services -->
     <div class="flex justify-between gap-4 container mx-16">
       <div class="flex flex-col justify-center">
-        <div class="text-shadow text-6xl font-manrope font-extrabold text-[#564E4E]">
+        <div class="text-shadow text-6xl font-manrope font-extrabold text-secondary">
           Maksimallin<br />Bisnis Kamu.
         </div>
         <p class="text-shadow mt-4 text-[#564E4E] text-[26px] font-normal">
@@ -15,15 +15,15 @@
         </p>
         <div class="flex items-center gap-4 mt-12">
           <div class="bg-[#FAF8FD] py-4 px-6 text-center rounded-2xl shadow-card text-primary">
-            <h5 class="text-lg">Sales</h5>
-            <p class="mt-1 text-sm">Mulai dari 15k / Jam</p>
+            <h5 class="text-lg text-secondary">Sales</h5>
+            <p class="mt-1 text-sm text-secondary">Mulai dari 15k / Jam</p>
             <Button class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
               >Pesan Sekarang</Button
             >
           </div>
           <div class="bg-[#FAF8FD] py-4 px-6 text-center rounded-2xl shadow-card text-primary">
-            <h5 class="text-lg">Waitress</h5>
-            <p class="mt-1 text-sm">Mulai dari 12.5k / Jam</p>
+            <h5 class="text-lg text-secondary">Waitress</h5>
+            <p class="mt-1 text-sm text-secondary">Mulai dari 12.5k / Jam</p>
             <Button class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
               >Pesan Sekarang</Button
             >
@@ -119,7 +119,9 @@
               terbaik. Sakutambah membuka peluang untuk masyarakat Indonesia yang ingin lebih
               mengembangkan diri dan memakai waktunya untuk hal yang lebih bermanfaat.
             </div>
-            <Button class="mt-6 text-lg rounded-xl font-bold">Gabung Sakutambah</Button>
+            <Button class="mt-6 text-lg rounded-xl bg-[#5F2B8C] font-bold"
+              >Gabung Sakutambah</Button
+            >
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@
         </div>
         <Form @submit="loginHandle" :validation-schema="loginSchema">
           <InputPhoneID name="phone" placeholder="85728xxxxxx" class="mt-8 md:mt-11" />
-          <Button type="submit" class="bg-primary-soft w-full rounded-xl" :disabled="isSubmitting"
+          <Button type="submit" class="bg-primary w-full rounded-xl" :disabled="isSubmitting"
             >Masuk / Daftar</Button
           >
         </Form>
@@ -40,10 +40,7 @@
               >Kirim ulang kode</span
             >
           </p>
-          <Button
-            type="submit"
-            class="bg-primary-soft w-full rounded-xl mt-6"
-            :disabled="isSubmitting"
+          <Button type="submit" class="bg-primary w-full rounded-xl mt-6" :disabled="isSubmitting"
             >Submit</Button
           >
         </Form>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <slot></slot>
+    <div class="bg-[#F8F8F8]">
+      <slot></slot>
+    </div>
     <Footer />
   </div>
 </template>

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="mb-4 w-full">
+  <div class="w-full">
     <Field
       :id="name"
       :name="name"

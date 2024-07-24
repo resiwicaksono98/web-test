@@ -26,7 +26,7 @@ const { isLoading } = storeToRefs(useLoaderStore())
   width: 48px;
   height: 48px;
   border: 5px solid #fff;
-  border-bottom-color: #5f2b8c;
+  border-bottom-color: #6cd99b;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;

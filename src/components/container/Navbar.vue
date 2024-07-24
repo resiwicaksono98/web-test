@@ -4,8 +4,8 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-10">
         <div class="logo text-primary-dark text-2xl font-extrabold font-manrope">GASPOLL.IN</div>
-        <div class="text-primary font-semibold font-manrope">Waitress Kami</div>
-        <div class="text-primary font-semibold font-manrope">Sales Kami</div>
+        <div class="text-secondary font-semibold font-manrope">Waitress Kami</div>
+        <div class="text-secondary font-semibold font-manrope">Sales Kami</div>
       </div>
       <div class="flex items-center gap-6">
         <!-- User logged in -->
