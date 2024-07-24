@@ -22,13 +22,13 @@
     @close="isOpen = false"
     class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40"
   >
-    <Login @close="isOpen = false" />
+    <LoginRegister @close="isOpen = false" />
   </Dialog>
 </template>
 <script setup>
 import { ref } from 'vue'
 import Button from '../ui/Button.vue'
-import Login from './Login.vue'
+import LoginRegister from './LoginRegister.vue'
 import { Dialog } from '@headlessui/vue'
 import Icon from '../ui/Icon.vue'
 import { onMounted } from 'vue'
