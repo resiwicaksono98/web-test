@@ -18,6 +18,7 @@
         </Form>
         <div
           class="mt-4 flex items-center justify-center gap-2 border py-2 px-4 rounded-xl cursor-pointer hover:bg-gray-100"
+          @click="loginGoogle"
         >
           <Icon name="flat-color-icons:google" class="w-6 h-6" />
           <div class="text-xs font-normal">Masuk / Daftar dengan Google</div>
@@ -64,7 +65,7 @@ import Button from '../ui/Button.vue'
 import AuthTemplate from '../templates/AuthTemplate.vue'
 import { Form } from 'vee-validate'
 import * as yup from 'yup'
-import { checkPhoneNumberExist, requestAuthOtp } from '@/services/authService'
+import { checkPhoneNumberExist, requestAuthOtp, loginWithGoogle } from '@/services/authService'
 import { toastError, toastInfo } from '@/hooks/useToast'
 import { useAuthStore } from '@/stores/authStore'
 import { useRouter } from 'vue-router'
@@ -160,5 +161,14 @@ watch(timeLeft, () => {
     startTimer()
   }
 })
+
+async function loginGoogle() {
+  const res = await loginWithGoogle()
+  if (res) {
+    emit('close')
+  } else {
+    // Register demander here
+  }
+}
 </script>
 <style lang=""></style>
