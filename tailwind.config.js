@@ -14,7 +14,8 @@ export default {
         'gray-darken': '#656565',
         'gray-soft': '#BDBCBC',
         'gray-medium': '#585858',
-        'gray-light': '#64748B'
+        'gray-light': '#64748B',
+        green: '#6CD99B'
       },
       fontFamily: {
         manrope: ['Manrope', 'sans-serif'],

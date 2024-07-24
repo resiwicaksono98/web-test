@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <nav class="fixed top-0 w-full bg-white text-black p-4 px-10 z-50 shadow-md">
     <div class="flex items-center justify-between">
@@ -62,18 +61,19 @@
     @close="dialogLoginRegister = false"
     class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40"
   >
-    <Login @close="dialogLoginRegister = false" />
+    <LoginRegister @close="dialogLoginRegister = false" />
   </Dialog>
 </template>
 <script setup>
 import { ref } from 'vue'
 import Button from '../ui/Button.vue'
-import Login from './Login.vue'
+import LoginRegister from './LoginRegister.vue'
 import { Dialog } from '@headlessui/vue'
 import { useGetUser } from '../../hooks/useGetUser'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import Icon from '../ui/Icon.vue'
 import { useAuthStore } from '@/stores/authStore'
+import { onMounted } from 'vue'
 
 const user = useGetUser()
 const auth = useAuthStore()
@@ -84,5 +84,15 @@ function logout() {
 
   dialogLoginRegister.value = false
 }
+
+onMounted(async () => {
+  const authStore = useAuthStore()
+  user.value = authStore.user 
+
+  if (user.value && !user.value.isDemander) {
+    dialogLoginRegister.value = true
+    isOpen.value = true
+  }
+})
 </script>
 <style lang=""></style>
