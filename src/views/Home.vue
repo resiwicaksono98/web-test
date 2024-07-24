@@ -119,9 +119,9 @@
               terbaik. Sakutambah membuka peluang untuk masyarakat Indonesia yang ingin lebih
               mengembangkan diri dan memakai waktunya untuk hal yang lebih bermanfaat.
             </div>
-            <Button class="mt-6 text-lg rounded-xl bg-[#5F2B8C] font-bold"
-              >Gabung Sakutambah</Button
-            >
+            <button class="py-2 px-4 text-white mt-6 text-lg rounded-xl bg-[#5F2B8C] font-bold">
+              Gabung Sakutambah
+            </button>
           </div>
         </div>
       </div>

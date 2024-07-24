@@ -45,6 +45,7 @@ export async function loginWithGoogle() {
         toastSuccess('Login successfully')
         return true
       } else {
+        localStorage.setItem('registerByGoogle', true)
         return false
       }
     }
@@ -58,6 +59,26 @@ async function firebaseAuth(firebaseToken) {
   const { data, loading, error, fetchData } = useFetch('auth/firebase-login', 'POST', {
     firebaseToken
   })
+
+  await fetchData()
+
+  return { data, loading, error }
+}
+
+export const registerUser = async (userData) => {
+  const { data, loading, error, fetchData } = useFetch('auth/register-user', 'POST', userData)
+
+  await fetchData()
+
+  return { data, loading, error }
+}
+
+export const registerDemander = async (demanderData) => {
+  const { data, loading, error, fetchData } = useFetch(
+    'auth/register-demander',
+    'POST',
+    demanderData
+  )
 
   await fetchData()
 

@@ -4,7 +4,7 @@
       <img
         src="@/assets/images/auth-image.png"
         alt="Login Image"
-        class="w-[550px] h-[550px] object-cover rounded-l-2xl"
+        class="w-[550px] h-[700px] object-cover rounded-l-2xl"
       />
       <div class="absolute top-20 left-8 text-primary-medium">
         <div class="text-3xl font-medium">Hemat Lebih Banyak Biaya</div>
@@ -26,17 +26,19 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col justify-between max-w-xl p-4 relative">
-      <div class="flex flex-col items-center mx-4 md:mx-20">
+    <div class="flex flex-col justify-between max-w-xl p-4 relative w-full bg-red-20">
+      <div class="flex flex-col justify-center h-full items-center mx-4 md:mx-12">
         <img
           src="@/assets/images/logo-sakutambah.png"
           alt="Sakutambah logo"
           class="h-12 md:h-20 mt-4"
         />
-        <slot />
+        <div class="mt-5 w-full">
+          <slot />
+        </div>
       </div>
       <!-- terms and condition -->
-      <div class="text-xs mt-12 md:text-sm font-light text-gray-medium">
+      <div class="text-xs mt-8 md:text-sm font-light text-gray-medium">
         Dengan bergabung, kamu setuju dengan goSPG
         <span class="underline"> Terms of Service </span> dan dengan terkadang menerima email dari
         kami. Tolong baca <span class="underline">Privacy Policy</span> kami untuk mempelajari
