@@ -4,6 +4,7 @@ import { useFetch } from '@/hooks/useFetch'
 import axios from 'axios'
 import { config } from '@/utils/config'
 import { toastError, toastSuccess } from '@/hooks/useToast'
+import { useLoaderStore } from './loaderStore'
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref()
@@ -48,7 +49,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   const me = async () => {
-    const { data, error: err, loading: load, fetchData } = useFetch('me', 'GET')
+    const { data, error: err, loading: load, fetchData } = useFetch('demanders/profile', 'GET')
 
     await fetchData()
 
@@ -59,13 +60,37 @@ export const useAuthStore = defineStore('auth', () => {
     if (data.value) {
       user.value = data.value.data
       loading.value = false
+      useLoaderStore().isLoading = false
     }
 
     if (err.value) {
       error.value = err.value.response.data.message
       loading.value = false
+      useLoaderStore().isLoading = false
     }
   }
 
-  return { user, authByOtp, me }
+  const logout = async () => {
+    const { data, error: err, loading: load, fetchData } = useFetch('auth/logout', 'POST')
+
+    await fetchData()
+
+    if (load.value) {
+      loading.value = true
+    }
+
+    if (data.value) {
+      user.value = null
+      toastSuccess('Logout successfully')
+      window.location.reload()
+      loading.value = false
+    }
+
+    if (err.value) {
+      toastError(err.value.response.data.message)
+      loading.value = false
+    }
+  }
+
+  return { user, authByOtp, me, logout }
 })
