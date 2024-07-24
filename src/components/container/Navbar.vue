@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <nav class="fixed top-0 w-full bg-white text-black p-4 px-10 z-50 shadow-md">
     <div class="flex items-center justify-between">

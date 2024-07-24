@@ -14,7 +14,11 @@
     "@headlessui/vue": "^1.7.22",
     "@vuepic/vue-datepicker": "^9.0.1",
     "axios": "^1.7.2",
+<<<<<<< HEAD
     "date-fns": "^3.6.0",
+=======
+    "firebase": "^10.12.4",
+>>>>>>> origin/dev
     "pinia": "^2.1.7",
     "vee-validate": "^4.13.2",
     "vue": "^3.4.29",
