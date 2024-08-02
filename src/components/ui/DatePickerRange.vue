@@ -10,12 +10,14 @@
         class="appearance-none rounded-md text-gray-700 leading-tight focus:ring-1 focus:border-none focus:ring-gray-darken"
         :class="newClass"
         :hide-input-icon="true"
+        range
+        :min-date="new Date()"
       />
-      <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+      <div class="absolute inset-y-0 right-5 flex items-center pr-3 pointer-events-none">
         <Icon name="mdi:calendar-range-outline" class="h-6 w-6 text-primary" />
       </div>
     </div>
-    <ErrorMessage :name="name" class="text-red-500 text-xs italic" />
+    <ErrorMessage :name="name" />
   </Field>
 </template>
 

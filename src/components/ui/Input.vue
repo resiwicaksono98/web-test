@@ -6,16 +6,19 @@
       :name="name"
       :type="type"
       :placeholder="placeholder"
-      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-1 focus:border-none focus:ring-gray-darken"
+      @input="updateValue"
+      v-model="value"
+      class="appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-1 focus:border-none focus:ring-gray-darken placeholder:text-sm"
     />
     <ErrorMessage :name="name" class="text-red-500 text-xs italic" />
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, ref, watch } from 'vue'
 import { Field, ErrorMessage, useField } from 'vee-validate'
-
+const emit = defineEmits(['update-value'])
+const value = ref('')
 const props = defineProps({
   name: {
     type: String,
@@ -34,6 +37,14 @@ const props = defineProps({
     default: 'required'
   }
 })
+
+watch(value, (newValue) => {
+  emit('update-value', newValue)
+})
+
+function updateValue(event) {
+  value.value = event.target.value
+}
 </script>
 
 <style scoped></style>

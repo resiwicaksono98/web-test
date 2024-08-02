@@ -10,28 +10,32 @@
         class="appearance-none rounded-md text-gray-700 leading-tight focus:ring-1 focus:border-none focus:ring-gray-darken"
         :class="newClass"
         :hide-input-icon="true"
+        time-picker
+        :min-time="{ hours: 1, minutes: 0 }"
+        :max-time="{ hours: 24, minutes: 0 }"
+        :range="{ disableTimeRangeValidation: true }"
       />
-      <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-        <Icon name="mdi:calendar-range-outline" class="h-6 w-6 text-primary" />
+      <div class="absolute inset-y-0 right-5 flex items-center pr-3 pointer-events-none">
+        <Icon name="mdi:clock-outline" class="h-6 w-6 text-primary" />
       </div>
     </div>
-    <ErrorMessage :name="name" class="text-red-500 text-xs italic" />
   </Field>
+  <ErrorMessage :name="name" />
 </template>
 
 <script setup>
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import { Field } from 'vee-validate'
-import Icon from '../ui/Icon.vue'
-import ErrorMessage from '../ui/ErrorMessage.vue'
+import Icon from './Icon.vue'
+import ErrorMessage from './ErrorMessage.vue'
 const emit = defineEmits(['update-value'])
 
 const props = defineProps({
   format: {
     type: String,
     required: false,
-    default: 'MM/dd/yyyy'
+    default: 'HH:mm'
   },
   name: {
     type: String,

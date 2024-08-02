@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <Icon :icon="name" class="h-5 w-5" />
+  <Icon :icon="name" class="" />
 </template>
 <script setup>
 import { Icon } from '@iconify/vue'

@@ -13,7 +13,7 @@
       :caret="false"
       @select="updateValue"
       :class="newClass"
-      class="border rounded-md placeholder:text-sm focus:outline-primary"
+      class="rounded-md placeholder:text-sm focus:outline-primary"
       :disabled="disabled"
     >
       <template v-slot:caret>
@@ -25,12 +25,13 @@
       </template>
     </Multiselect>
   </Field>
-  <ErrorMessage class="text-red" :name="name" />
+  <ErrorMessage :name="name" />
 </template>
 <script setup>
 import Multiselect from 'vue-multiselect'
-import { ErrorMessage, Field } from 'vee-validate'
+import { Field } from 'vee-validate'
 import Icon from './Icon.vue'
+import ErrorMessage from './ErrorMessage.vue'
 const emit = defineEmits(['update-value'])
 
 defineProps({
@@ -76,9 +77,6 @@ function updateValue(newValue) {
 }
 .multiselect__single {
   padding: 4px 6px;
-}
-.multiselect__content {
-  border: 1px solid #3a025b;
 }
 
 .multiselect .multiselect__option--highlight {

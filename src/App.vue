@@ -1,21 +1,21 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import MainTemplate from './components/templates/MainTemplate.vue'
-import { useLoaderStore } from './stores/loaderStore'
-import { storeToRefs } from 'pinia'
+// import { useLoaderStore } from './stores/loaderStore'
+// import { storeToRefs } from 'pinia'
 
-const { isLoading } = storeToRefs(useLoaderStore())
+// const { isLoading } = storeToRefs(useLoaderStore())
 </script>
 
 <template>
-  <div
-    v-if="isLoading"
-    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-  >
-    <div class="loader"></div>
-  </div>
-  <div v-else>
+  <div>
     <MainTemplate>
+      <!-- <div
+        v-if="isLoading"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      >
+        <div class="loader"></div>
+      </div> -->
       <RouterView />
     </MainTemplate>
   </div>

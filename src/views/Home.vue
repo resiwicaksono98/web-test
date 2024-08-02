@@ -17,14 +17,18 @@
           <div class="bg-[#FAF8FD] py-4 px-6 text-center rounded-2xl shadow-card text-primary">
             <h5 class="text-lg text-secondary">Sales</h5>
             <p class="mt-1 text-sm text-secondary">Mulai dari 15k / Jam</p>
-            <Button class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
+            <Button
+              @click="$router.push('/event-schedule/create?sales')"
+              class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
               >Pesan Sekarang</Button
             >
           </div>
           <div class="bg-[#FAF8FD] py-4 px-6 text-center rounded-2xl shadow-card text-primary">
             <h5 class="text-lg text-secondary">Waitress</h5>
             <p class="mt-1 text-sm text-secondary">Mulai dari 12.5k / Jam</p>
-            <Button class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
+            <Button
+              class="mt-2 py-1 text-sm rounded-xl px-2 font-bold text-[#FAF8FD]"
+              @click="$router.push('/event-schedule/create?waitress')"
               >Pesan Sekarang</Button
             >
           </div>
