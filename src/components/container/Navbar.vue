@@ -1,10 +1,13 @@
 <template>
-  <nav class="fixed top-0 w-full bg-white text-black p-4 px-10 z-50 shadow-md">
+  <nav class="fixed top-0 w-full bg-white text-black p-4 lg:px-10 z-50 shadow-md">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-10">
-        <div class="logo text-primary-dark text-2xl font-extrabold font-manrope">GASPOLL.IN</div>
-        <div class="text-secondary font-semibold font-manrope">Waitress Kami</div>
-        <div class="text-secondary font-semibold font-manrope">Sales Kami</div>
+        <Icon name="mdi:menu" class="h-8 w-8 lg:hidden" />
+        <div class="logo text-primary-dark text-lg lg:text-2xl font-extrabold font-manrope">
+          GASPOLL.IN
+        </div>
+        <div class="text-secondary font-semibold font-manrope hidden md:block">Waitress Kami</div>
+        <div class="text-secondary font-semibold font-manrope hidden md:block">Sales Kami</div>
       </div>
       <div class="flex items-center gap-6">
         <!-- User logged in -->
@@ -48,7 +51,9 @@
         </div>
         <!-- User not logged in -->
         <div class="flex items-center gap-6" v-else>
-          <Button class="py-1 rounded-full cursor-pointer" @click="dialogLoginRegister = true"
+          <Button
+            class="py-1 rounded-full cursor-pointer text-sm"
+            @click="dialogLoginRegister = true"
             >Masuk/Daftar</Button
           >
         </div>
